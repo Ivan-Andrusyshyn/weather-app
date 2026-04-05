@@ -1,0 +1,41 @@
+:host-context(.theme-thunderstorm) {
+  header {
+    @apply bg-purple-600;
+  }
+}
+
+:host-context(.theme-drizzle) {
+  header {
+    @apply bg-blue-300;
+  }
+}
+
+:host-context(.theme-rain) {
+  header {
+    @apply bg-blue-500;
+  }
+}
+
+:host-context(.theme-snow) {
+  header {
+    @apply bg-gray-100;
+  }
+}
+
+:host-context(.theme-atmosphere) {
+  header {
+    @apply bg-gray-300;
+  }
+}
+
+:host-context(.theme-clear) {
+  header {
+    @apply bg-gradient-to-br from-blue-100   to-gray-200;
+  }
+}
+
+:host-context(.theme-clouds) {
+  header {
+    @apply bg-gray-200;
+  }
+}

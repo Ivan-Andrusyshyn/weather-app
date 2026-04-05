@@ -1,0 +1,32 @@
+@if (weather(); as weather) {
+  <section
+    class="relative w-full after:absolute after:inset-0 shadow-lg after:bg-black/30 after:rounded-2xl bg-cover bg-center bg-no-repeat mx-auto p-4 md:p-6 xl:p-8 rounded-2xl text-center"
+    [ngStyle]="{
+      'background-image': 'url(' + getBgImg(weather.timeOfDay) + ')',
+    }"
+  >
+    <div
+      [@fadeAnimation]="weather.city"
+      class="relative z-10"
+      [class]="textColorMap[weather.timeOfDay]"
+    >
+      <app-forecast-header
+        [city]="weather.city"
+        [country]="weather.country"
+        [timeOfDay]="weather.timeOfDay"
+      ></app-forecast-header>
+
+      <app-forecast-body
+        [temperature]="weather.temperature"
+        [title]="weather.title"
+        [iconUrl]="getWeatherIcon(weather.icon)"
+        [description]="weather.description"
+      ></app-forecast-body>
+
+      <app-forecast-footer
+        [humidity]="weather.humidity"
+        [windSpeed]="weather.windSpeed"
+      ></app-forecast-footer>
+    </div>
+  </section>
+}

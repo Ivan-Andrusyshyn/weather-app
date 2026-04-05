@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./assets/styles/animations.scss" as *;
+
+@use "./assets/styles/weather-theme.scss" as *;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

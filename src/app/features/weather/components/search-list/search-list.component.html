@@ -1,0 +1,27 @@
+@if (searchList().length && showSearchList()) {
+  <div
+    class="z-50 absolute left-0 right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden"
+  >
+    <div
+      class="flex justify-between px-4 py-2 text-sm font-semibold text-gray-500 border-b"
+    >
+      <p>Recent searches</p>
+      <button
+        (click)="clearSearchList.emit()"
+        class="underline underline-offset-1"
+      >
+        Clear history
+      </button>
+    </div>
+    <ul class="overflow-y-auto max-h-50 md:max-h-64">
+      @for (city of searchList(); track $index) {
+        <li
+          (click)="select(city)"
+          class="px-4 py-2 cursor-pointer hover:bg-gray-100 transition text-gray-700"
+        >
+          {{ city }}
+        </li>
+      }
+    </ul>
+  </div>
+}

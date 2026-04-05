@@ -1,0 +1,13 @@
+<div class="fixed top-5 right-5 flex flex-col gap-3 z-50">
+  @for (n of notifications(); track $index) {
+    <div
+      [ngClass]="getBgColor(n.type)"
+      class="text-white px-4 py-3 rounded shadow-lg flex items-center justify-between min-w-[250px] max-w-sm animate-slide-in"
+    >
+      <span>{{ n.message }}</span>
+      <button (click)="remove(n.id)" class="ml-4 font-bold hover:text-gray-200">
+        &times;
+      </button>
+    </div>
+  }
+</div>

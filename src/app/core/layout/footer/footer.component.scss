@@ -1,0 +1,41 @@
+:host-context(.theme-thunderstorm) {
+  footer {
+    @apply bg-gradient-to-r from-gray-800 via-purple-900 to-black text-white;
+  }
+}
+
+:host-context(.theme-drizzle) {
+  footer {
+    @apply bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500 text-white;
+  }
+}
+
+:host-context(.theme-rain) {
+  footer {
+    @apply bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 text-white;
+  }
+}
+
+:host-context(.theme-snow) {
+  footer {
+    @apply bg-gradient-to-r from-blue-50 via-gray-100 to-gray-200 text-gray-800;
+  }
+}
+
+:host-context(.theme-atmosphere) {
+  footer {
+    @apply bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 text-white;
+  }
+}
+
+:host-context(.theme-clear) {
+  footer {
+    @apply bg-gradient-to-br from-blue-100   to-gray-200;
+  }
+}
+
+:host-context(.theme-clouds) {
+  footer {
+    @apply bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 text-gray-900;
+  }
+}

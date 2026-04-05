@@ -1,0 +1,16 @@
+<div class="mt-2 space-y-1 text-sm text-red-500">
+  @if (control().errors && shouldShowError) {
+    @if (control().errors?.["required"]) {
+      <p>{{ cityErrorMessages().required }}</p>
+    }
+    @if (control().errors?.["minlength"]) {
+      <p>{{ cityErrorMessages().minlength }}</p>
+    }
+    @if (control().errors?.["maxlength"]) {
+      <p>{{ cityErrorMessages().maxlength }}</p>
+    }
+    @if (control().errors?.["pattern"]) {
+      <p>{{ cityErrorMessages().pattern }}</p>
+    }
+  }
+</div>
