@@ -15,13 +15,14 @@
         [country]="weather.country"
         [timeOfDay]="weather.timeOfDay"
       ></app-forecast-header>
-
-      <app-forecast-body
-        [temperature]="weather.temperature"
-        [title]="weather.title"
-        [iconUrl]="getWeatherIcon(weather.icon)"
-        [description]="weather.description"
-      ></app-forecast-body>
+      <div class="mt-4 md:mt-6 mb-4 md:mb-6">
+        <app-forecast-body
+          [temperature]="weather.temperature"
+          [title]="weather.title"
+          [iconUrl]="getWeatherIcon(weather.icon)"
+          [description]="weather.description"
+        ></app-forecast-body>
+      </div>
 
       <app-forecast-footer
         [humidity]="weather.humidity"
