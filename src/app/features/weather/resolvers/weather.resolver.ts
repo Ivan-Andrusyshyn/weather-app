@@ -11,12 +11,14 @@ import { CacheDataService } from '../services/cache-data.service';
 @Injectable({
   providedIn: 'root',
 })
-export class WeatherResolver implements Resolve<any> {
+export class WeatherResolver implements Resolve<WeatherModel | null | boolean> {
   private weatherService = inject(WeatherService);
   private toastService = inject(ToastService);
   private cacheService = inject(CacheDataService);
 
-  resolve(route: ActivatedRouteSnapshot): Observable<WeatherModel | boolean> {
+  resolve(
+    route: ActivatedRouteSnapshot,
+  ): Observable<WeatherModel | null | boolean> {
     const city = route.paramMap.get('city');
 
     if (!city) {

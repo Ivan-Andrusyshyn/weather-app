@@ -15,6 +15,7 @@ import { ErrorMessageTypes } from '../../types/form.model';
   imports: [],
   templateUrl: './form-errors.component.html',
   styleUrl: './form-errors.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormErrorsComponent {
   control = input.required<AbstractControl>();

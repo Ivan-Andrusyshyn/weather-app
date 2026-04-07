@@ -1,15 +1,16 @@
 import { Injectable, signal } from '@angular/core';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 // =======================
 import { WeatherModel } from '../types/weather.model';
+import { CacheEntry } from '../types/cache.model';
 
 @Injectable({ providedIn: 'root' })
 export class CacheDataService {
-  private cache = new Map<string, { data: any; time: number }>();
+  private cache = new Map<string, CacheEntry>();
   private readonly CACHE_TIME = 10 * 60 * 1000;
 
-  searchListSignal = signal<string[]>([]);
+  private searchListSignal = signal<string[]>([]);
   searchList = this.searchListSignal.asReadonly();
 
   getKeys(): string[] {
@@ -21,7 +22,7 @@ export class CacheDataService {
     this.cache.clear();
   }
 
-  getCache(key: string) {
+  getCache(key: string): Observable<WeatherModel> | null {
     const cached = this.cache.get(key);
 
     if (cached && Date.now() - cached.time < this.CACHE_TIME) {
